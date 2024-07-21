@@ -40,4 +40,36 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
 
+    /** 
+     * Part Two the Movie and Rating Project 
+     */
+    $("#title-form").submit(function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const title = $("#mTitle").val();
+        const rating = $("#rating").val();
+
+        // Create a new element for the title and rating
+        const movieEntry = $("<div class='entry'></div>");
+        movieEntry.append(`<p>Title: ${title}</p>`);
+        movieEntry.append(`<p>Rating: ${rating}</p>`);
+
+        // Create a remove button
+        const removeButton = $('<button class="remove-button">Remove</button>');
+
+        // Append the remove button and click event listener
+        movieEntry.append(removeButton);
+
+        removeButton.click(function () {
+            $(this).parent().remove(); // Remove the entire entry
+        });
+
+        // Append the entry to the container
+        $("#titles-container").append(movieEntry);
+
+        // Clear the form after submission
+        $("#title-form").trigger("reset");
+    });
+
+
 });
