@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
     /** 
      * Part Two the Movie and Rating Project 
      */
-    $("#title-form").submit(function (event) {
-        event.preventDefault(); // Prevent default form submission
+    $("#title-form").submit(function (e) {
+        e.preventDefault(); // Prevent default form submission
 
         const title = $("#mTitle").val();
         const rating = $("#rating").val();
